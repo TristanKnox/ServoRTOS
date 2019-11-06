@@ -59,10 +59,12 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "led_task.h"           // needed for led_task_init
-#include "customer_creation_manager.h"
-#include "Bank.h"
-#include "bank_teller.h"
 #include <stdio.h>
+#include "PinSetup.h"
+#include "PWM.h"
+#include "ServoControl.h"
+#include "Global_defines.h"
+
 
 /* USER CODE END Includes */
 
@@ -134,19 +136,19 @@ int main(void)
   ////////////////////////////////////////////////////////* USER CODE BEGIN 2 *////////////////////////////////////////////////////////////
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- // led_task_init(0, "LED_TASK_0", 100, 500);
-  //led_task_init(1, "LED_TASK_1", 1000, 1000);
-	init_customer_creation_manager(1,4);
-	init_bank();
-	char name_buffer[12];
-	TELLERS_IN_BANK = 0;
-	teller_state_t state[NUMBER_OF_TELLERS] = {0};
-	for(int i = 0; i < NUMBER_OF_TELLERS; i++){
-				
-		snprintf(name_buffer,12,"Teller_%d",TELLERS_IN_BANK+1);
-		bank_teller_init(TELLERS_IN_BANK,name_buffer);
-		TELLERS_IN_BANK++;
-	}
+	pin_t PA0 = {A,0,ALT,AF1};
+	pin_t PA2 = {A,2,ALT,AF1};	
+	init_PWM(PCS,PWM_count);
+	add_output_channel(CHAN1,PWM_mode,PA0);
+	add_output_channel(CHAN3,PWM_mode,PA2);
+	
+	QueueHandle_t servo1_queue;
+	QueueHandle_t servo2_queue;
+	
+	
+ 
+ 
+ 
   
   // USART_Printf is printf() customized to this platform and uses a variable argugment list.
   // It is convenient but unnecessary.  You can use HAL functions (e.g. HAL_USART_Transmit())

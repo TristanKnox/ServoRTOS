@@ -1,5 +1,7 @@
+#ifndef __RecipeHandler_H
+#define __RecipeHandler_H
+
 #include "stdint.h"
-#include "UI_Ginerics.h"
 #include "LED.h"
 #include "stdio.h"
 #include <stdlib.h>
@@ -30,3 +32,5 @@ typedef struct{
 
 void init_recipe(recipe_t* recipe, unsigned char* recipe_array);
 command_t get_next_command(recipe_t* recipe);
+
+#endif

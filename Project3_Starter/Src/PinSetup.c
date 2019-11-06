@@ -20,10 +20,10 @@ void init_pinX(pin_t pin){
 	GPIO_TypeDef * GPIOx = get_GPIOx(pin.group);
 	
 	int mask;// = build_mask(pin.pin_number, CLEAR, 3,2);
-	mask = mode_mask(pin, CLEAR);
+	mask = mode_mask(pin, CLEAR_MASK);
 	GPIOx->MODER &= mask;//0x00;	//Clear the 2 bits associated with mode
 
-	mask = mode_mask(pin, SET);
+	mask = mode_mask(pin, SET_MASK);
 	GPIOx->MODER |= mask;	// Set the mode for the pin
 	
 	
@@ -36,7 +36,7 @@ void init_pinX(pin_t pin){
 int read_pinX(pin_t pin){
 	int value;
 	GPIO_TypeDef * GPIOx = get_GPIOx(pin.group);
-	int mask = bit_mask(pin.pin_number, EXTRACT);
+	int mask = bit_mask(pin.pin_number, EXTRACT_MASK);
 	if(pin.mode == INPUT){
 		value = GPIOx->IDR & mask;
 	}
@@ -63,7 +63,7 @@ void monitor_pinX(pin_t pin){
 void output_pinX_ON(pin_t pin){
 	GPIO_TypeDef * GPIOx = get_GPIOx(pin.group);
 	//int mask = build_mask(pin.pin_number, SET,1,1);
-	int mask = bit_mask(pin.pin_number, SET);
+	int mask = bit_mask(pin.pin_number, SET_MASK);
 	GPIOx->ODR |= mask;
 	time_delay(SLEW_COMP);
 }
@@ -73,7 +73,7 @@ void output_pinX_ON(pin_t pin){
 void output_pinX_OFF(pin_t pin){
 	GPIO_TypeDef * GPIOx = get_GPIOx(pin.group);
 	//int mask = build_mask(pin.pin_number,CLEAR,1,1);
-	int mask = bit_mask(pin.pin_number, CLEAR);
+	int mask = bit_mask(pin.pin_number, CLEAR_MASK);
 	GPIOx->ODR &= mask;
 	time_delay(SLEW_COMP);
 }
@@ -116,11 +116,11 @@ int mode_bit_config(mode_t mode){
 // Or turning on or off a spicific ouput pin
 int bit_mask(int pin_number, mask_t type){
 	switch(type){
-		case SET:
+		case SET_MASK:
 			return 1 << pin_number;
-		case CLEAR:
+		case CLEAR_MASK:
 			return ~(1 << pin_number);
-		case EXTRACT:
+		case EXTRACT_MASK:
 			return 1 << pin_number;
 		default:
 			return 0;
@@ -131,11 +131,11 @@ int mode_mask(pin_t pin, mask_t type){
 	int base_mask = mode_bit_config(pin.mode);	// The base mask is defigned by what the MODER regester need for the specified mode
 	int shift_value = pin.pin_number *2;	//The MODER register assigns 2 bits for every pin. Therfor by multiplying the pin_number by 2 we get the apropreat shift value
 	switch(type){
-		case SET:
+		case SET_MASK:
 			return base_mask << shift_value;
-		case EXTRACT:
+		case EXTRACT_MASK:
 			return base_mask << shift_value;
-		case CLEAR:
+		case CLEAR_MASK:
 			return ~(3 << shift_value); // Shift 3 (bits 11) over then Invert the mask to protect all other bits
 		default:
 			return 0;

@@ -1,3 +1,6 @@
+#ifndef __PWM_H
+#define __PWM_H
+
 #include "stm32l476xx.h"
 # include "PinSetup.h"
 
@@ -18,4 +21,6 @@ void set_PSC_and_count(int pre_scalar, int count);
 void add_output_channel(channel_t channel, PWM_mode_t mode, pin_t pin);
 
 void set_puls_width(channel_t channel, int count);
+
+#endif
 

@@ -1,4 +1,6 @@
 // Tristan Knox
+#ifndef __PinSetup_H
+#define __PinSetup_H
 
 #include "stm32l476xx.h"
 
@@ -16,9 +18,9 @@ typedef enum{
 }GPIO_group_t;
 
 typedef enum{
-	CLEAR,
-	SET,
-	EXTRACT
+	CLEAR_MASK,
+	SET_MASK,
+	EXTRACT_MASK
 }mask_t;
 
 // Alt functions
@@ -58,3 +60,6 @@ int mode_mask(pin_t pin, mask_t type);
 //int get_bit_cluster(mode_t mode);
 int mode_bit_config(mode_t mode);
 void time_delay(int duration);
+
+#endif 
+

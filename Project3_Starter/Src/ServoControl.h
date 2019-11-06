@@ -1,3 +1,6 @@
+#ifndef __ServoControl_H
+#define __ServoControl_H
+
 #include "PWM.h"
 #include "TimeTracker.h"
 #include "RecipeHandler.h"
@@ -42,6 +45,6 @@ servo_state_t check_servo_state(servo_t* servo);
 void calibrate_servo(servo_t* servo, double max_duty_cycle, double min_duty_cycle);
 void execute_CMD(servo_t* servo, command_t* command);
 
-
+#endif
 
 
