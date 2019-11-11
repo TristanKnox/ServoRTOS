@@ -120,7 +120,9 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-	System_Clock_Init();
+	System_Clock_Init();	
+	LED_Init();
+	init_timer_clock();
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -147,6 +149,10 @@ int main(void)
 	init_PWM(PCS,PWM_count);
 	add_output_channel(CHAN1,PWM_mode,PA0);
 	add_output_channel(CHAN3,PWM_mode,PA2);
+	
+	//Green_LED_On();
+	
+	
 	USART_Printf("PWM done");
 	QueueHandle_t servo1_queue;
 	QueueHandle_t servo2_queue;
@@ -161,12 +167,12 @@ int main(void)
 	unsigned char recipe_error[] = {MOV+0,MOV+5,5,MOV+0,RECIPE_END};
 	
 	init_recipe(&recipe_1,demo_recipe);
-
-	init_recipe(&recipe_2,recipe2);
+	init_recipe(&recipe_2,demo_recipe);
 
 	USART_Printf("Starting Task");
 	
 	init_servo_task(1,"Servo_1",CHAN1,recipe_1);
+	init_servo_task(2,"Servo_2",CHAN3,recipe_2);
 	
 	
  
