@@ -63,6 +63,11 @@ project3_starter\main.o: ../Src/LED.h
 project3_starter\main.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
 project3_starter\main.o: ../Src/Global_defines.h
 project3_starter\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-project3_starter\main.o: ../Src/Servo_Task.h
+project3_starter\main.o: ../Src/UI_Task.h
+project3_starter\main.o: ../Src/UART.h
+project3_starter\main.o: ../Src/UI_Ginerics.h
+project3_starter\main.o: ../Src/UI_Task.h
+project3_starter\main.o: ../Src/Validation.h
 project3_starter\main.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
+project3_starter\main.o: ../Src/Servo_Task.h
 project3_starter\main.o: ../Src/SysClock.h

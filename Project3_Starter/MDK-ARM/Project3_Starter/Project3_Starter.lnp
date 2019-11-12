@@ -18,6 +18,8 @@
 "project3_starter\led.o"
 "project3_starter\timetracker.o"
 "project3_starter\sysclock.o"
+"project3_starter\validation.o"
+"project3_starter\ui_ginerics.o"
 "project3_starter\stm32l4xx_hal_rng.o"
 "project3_starter\stm32l4xx_hal_tim.o"
 "project3_starter\stm32l4xx_hal_tim_ex.o"

@@ -536,6 +536,26 @@
               <FileType>5</FileType>
               <FilePath>..\Src\SysClock.h</FilePath>
             </File>
+            <File>
+              <FileName>Validation.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Validation.c</FilePath>
+            </File>
+            <File>
+              <FileName>Validation.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\Validation.h</FilePath>
+            </File>
+            <File>
+              <FileName>UI_Ginerics.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\UI_Ginerics.c</FilePath>
+            </File>
+            <File>
+              <FileName>UI_Ginerics.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\UI_Ginerics.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

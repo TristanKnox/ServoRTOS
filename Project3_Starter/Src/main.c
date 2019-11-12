@@ -58,15 +58,18 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
 #include "led_task.h"           // needed for led_task_init
 #include <stdio.h>
 #include "PinSetup.h"
 #include "PWM.h"
 #include "ServoControl.h"
 #include "Global_defines.h"
+#include "UI_Task.h"
 #include "Servo_Task.h"
 #include "stm32l476xx.h"
 #include "SysClock.h"
+
 
 
 /* USER CODE END Includes */
@@ -176,6 +179,8 @@ int main(void)
 	init_servo_task(1,"Servo_1",CHAN1,recipe_1);
 	init_servo_task(2,"Servo_2",CHAN3,recipe_2);
 	
+	char input[MAX_INPUT];	
+	init_ui_task(1,"UI_Task",input,MAX_INPUT);
 	
  
  
