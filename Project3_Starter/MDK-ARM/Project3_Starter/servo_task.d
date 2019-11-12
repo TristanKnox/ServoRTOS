@@ -4,7 +4,7 @@ project3_starter\servo_task.o: ..\Src\ServoControl.h
 project3_starter\servo_task.o: ..\Src\PWM.h
 project3_starter\servo_task.o: ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h
 project3_starter\servo_task.o: ../Drivers/CMSIS/Include/core_cm4.h
-project3_starter\servo_task.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+project3_starter\servo_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 project3_starter\servo_task.o: ../Drivers/CMSIS/Include/core_cmInstr.h
 project3_starter\servo_task.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 project3_starter\servo_task.o: ../Drivers/CMSIS/Include/core_cmFunc.h
@@ -14,11 +14,11 @@ project3_starter\servo_task.o: ..\Src\PinSetup.h
 project3_starter\servo_task.o: ..\Src\TimeTracker.h
 project3_starter\servo_task.o: ..\Src\RecipeHandler.h
 project3_starter\servo_task.o: ..\Src\LED.h
-project3_starter\servo_task.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdio.h
-project3_starter\servo_task.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
+project3_starter\servo_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+project3_starter\servo_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 project3_starter\servo_task.o: ..\Src\Global_Defines.h
 project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-project3_starter\servo_task.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+project3_starter\servo_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 project3_starter\servo_task.o: ../Inc/FreeRTOSConfig.h
 project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -54,4 +54,9 @@ project3_starter\servo_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal
 project3_starter\servo_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h
 project3_starter\servo_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h
 project3_starter\servo_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
-project3_starter\servo_task.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
+project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+project3_starter\servo_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

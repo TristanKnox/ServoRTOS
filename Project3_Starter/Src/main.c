@@ -67,6 +67,7 @@
 #include "Servo_Task.h"
 #include "stm32l476xx.h"
 #include "SysClock.h"
+#include "UI_Task.h"
 
 
 /* USER CODE END Includes */
@@ -120,9 +121,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-	System_Clock_Init();	
-	LED_Init();
-	init_timer_clock();
+	System_Clock_Init();
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -149,32 +148,28 @@ int main(void)
 	init_PWM(PCS,PWM_count);
 	add_output_channel(CHAN1,PWM_mode,PA0);
 	add_output_channel(CHAN3,PWM_mode,PA2);
-	
-	//Green_LED_On();
-	
-	
 	USART_Printf("PWM done");
-	QueueHandle_t servo1_queue;
-	QueueHandle_t servo2_queue;
 	
-	recipe_t recipe_1 = {0};
-	recipe_t recipe_2 ={0};
+	recipe_t recipe_1;
+	recipe_t recipe_2;
 	
 	unsigned char recipe1[] = { LOOP + 2,MOV+ 5,MOV+0, END_LOOP,WAIT+ 5, LOOP + 5,MOV+5, WAIT+2,MOV+3,END_LOOP, RECIPE_END } ;
-	unsigned char wait_recipe[] = {LOOP+5,MOV+5,WAIT+30,MOV+0,END_LOOP,RECIPE_END};
-	unsigned char loop_recipe[] = {LOOP+5,MOV+5,MOV+0,END_LOOP,RECIPE_END};
 	unsigned char recipe2[] = { MOV | 5,WAIT+31,WAIT+31,WAIT+31,MOV+0, RECIPE_END, MOV + 5 } ;
 	unsigned char demo_recipe[] = {MOV+0,MOV+5,MOV+0,MOV+3,MOV+1,MOV+4,END_LOOP,MOV+0,MOV+2,WAIT+0,MOV+3,WAIT+0,MOV+2,MOV+3,WAIT+31,WAIT+31,WAIT+31,MOV+4,RECIPE_END};
 	unsigned char recipe_loop_error[] = { LOOP + 2,MOV+ 5,MOV+0, LOOP+2,MOV+3,END_LOOP, END_LOOP, RECIPE_END } ;
 	unsigned char recipe_error[] = {MOV+0,MOV+5,5,MOV+0,RECIPE_END};
 	
-	init_recipe(&recipe_1,loop_recipe);
-	init_recipe(&recipe_2,wait_recipe);
+	init_recipe(&recipe_1,demo_recipe);
+
+	init_recipe(&recipe_2,recipe2);
 
 	USART_Printf("Starting Task");
 	
+	//Tasks
 	init_servo_task(1,"Servo_1",CHAN1,recipe_1);
-	init_servo_task(2,"Servo_2",CHAN3,recipe_2);
+	
+	char input[MAX_INPUT];	
+	init_ui_task(1, "UI_Task", input, MAX_INPUT);
 	
 	
  

@@ -7,7 +7,7 @@ project3_starter\led_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_d
 project3_starter\led_task.o: ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h
 project3_starter\led_task.o: ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h
 project3_starter\led_task.o: ../Drivers/CMSIS/Include/core_cm4.h
-project3_starter\led_task.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+project3_starter\led_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 project3_starter\led_task.o: ../Drivers/CMSIS/Include/core_cmInstr.h
 project3_starter\led_task.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 project3_starter\led_task.o: ../Drivers/CMSIS/Include/core_cmFunc.h
@@ -15,7 +15,7 @@ project3_starter\led_task.o: ../Drivers/CMSIS/Include/core_cmSimd.h
 project3_starter\led_task.o: ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h
 project3_starter\led_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h
 project3_starter\led_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-project3_starter\led_task.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+project3_starter\led_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 project3_starter\led_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h
 project3_starter\led_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h
 project3_starter\led_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h
@@ -52,4 +52,4 @@ project3_starter\led_task.o: ../Inc/led_task.h
 project3_starter\led_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 project3_starter\led_task.o: ../Inc/rng.h
 project3_starter\led_task.o: ../Inc/usart.h
-project3_starter\led_task.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
+project3_starter\led_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

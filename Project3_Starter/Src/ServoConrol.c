@@ -20,7 +20,6 @@ void init_servo(servo_t* servo, channel_t chan, int pwm_count){
 }
 
 void execute_CMD(servo_t* servo, command_t* command){
-	//set_servo_position(servo,command->value);
 	if(command->opcode == MOV)
 		set_servo_position(servo,command->value);
 	if(command->opcode == WAIT)

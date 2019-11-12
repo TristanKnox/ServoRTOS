@@ -1,3 +1,6 @@
+#ifndef __TimeTracker_H
+#define __TimeTracker_H
+
 #include "stm32l476xx.h"
 
 typedef struct{
@@ -9,3 +12,5 @@ typedef struct{
 void init_timer(timer_t* timer, int timer_duration);
 int check_timer(timer_t* timer);
 void init_timer_clock(void);
+
+#endif

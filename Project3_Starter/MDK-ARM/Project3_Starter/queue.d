@@ -1,9 +1,9 @@
 project3_starter\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/queue.c
-project3_starter\queue.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
-project3_starter\queue.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
+project3_starter\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+project3_starter\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 project3_starter\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-project3_starter\queue.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
-project3_starter\queue.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+project3_starter\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+project3_starter\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 project3_starter\queue.o: ../Inc/FreeRTOSConfig.h
 project3_starter\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 project3_starter\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

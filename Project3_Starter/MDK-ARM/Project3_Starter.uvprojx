@@ -16,7 +16,7 @@
         <TargetCommonOption>
           <Device>STM32L476VGTx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32L4xx_DFP.2.2.0</PackID>
+          <PackID>Keil.STM32L4xx_DFP.2.0.0</PackID>
           <PackURL>http://www.keil.com/pack</PackURL>
           <Cpu>IRAM(0x20000000-0x20017FFF) IRAM2(0x10000000-0x10007FFF) IROM(0x8000000-0x80FFFFF)  CLOCK(8000000) FPU2 CPUTYPE("Cortex-M4")</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -535,6 +535,36 @@
               <FileName>SysClock.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Src\SysClock.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\UART.h</FilePath>
+            </File>
+            <File>
+              <FileName>UI_Ginerics.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\UI_Ginerics.c</FilePath>
+            </File>
+            <File>
+              <FileName>UI_Ginerics.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\UI_Ginerics.h</FilePath>
+            </File>
+            <File>
+              <FileName>Validation.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Validation.c</FilePath>
+            </File>
+            <File>
+              <FileName>Validation.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\Validation.h</FilePath>
             </File>
           </Files>
         </Group>
