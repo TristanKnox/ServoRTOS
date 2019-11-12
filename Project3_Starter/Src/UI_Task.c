@@ -75,22 +75,26 @@ void process_user_input(char* input)
 		case 'P':
 		case 'p':
 			snprintf(message,MESSAGE_SIZE, "p");
-			xQueueSend(servo1_queue,message,0);
+			//xQueueSend(servo1_queue,message,0);
+			xQueueSend(servo_msg_queue[0],message,0);
 			break;
 		case 'C':
 		case 'c':
 			snprintf(message,MESSAGE_SIZE, "c");
-			xQueueSend(servo1_queue,message,0);
+			//xQueueSend(servo1_queue,message,0);
+			xQueueSend(servo_msg_queue[0],message,0);
 			break;
 		case 'R':
 		case 'r':
 			snprintf(message,MESSAGE_SIZE, "r");
-			xQueueSend(servo1_queue,message,0);
+			//xQueueSend(servo1_queue,message,0);
+			xQueueSend(servo_msg_queue[0],message,0);
 			break;
 		case 'L':
 		case 'l':
 			snprintf(message,MESSAGE_SIZE, "l");
-			xQueueSend(servo1_queue,message,0);
+			//xQueueSend(servo1_queue,message,0);
+			xQueueSend(servo_msg_queue[0],message,0);
 			break;
 		case 'N':
 		case 'n':
@@ -98,32 +102,38 @@ void process_user_input(char* input)
 		case 'B':
 		case 'b':
 			snprintf(message,MESSAGE_SIZE, "p");
-			xQueueSend(servo1_queue,message,0);
+			//xQueueSend(servo1_queue,message,0);
+			xQueueSend(servo_msg_queue[0],message,0);
 			break;
 		default:
 			break;
 	}
+	
 	switch(input[1])
 	{
 		case 'P':
 		case 'p':
 			snprintf(message,MESSAGE_SIZE, "p");
-			xQueueSend(servo2_queue,message,0);
+			//xQueueSend(servo2_queue,message,0);
+			xQueueSend(servo_msg_queue[1],message,0);
 			break;
 		case 'C':
 		case 'c':
 			snprintf(message,MESSAGE_SIZE, "c");
-			xQueueSend(servo2_queue,message,0);
+			//xQueueSend(servo2_queue,message,0);
+			xQueueSend(servo_msg_queue[1],message,0);
 			break;
 		case 'R':
 		case 'r':
 			snprintf(message,MESSAGE_SIZE, "r");
-			xQueueSend(servo2_queue,message,0);
+			//xQueueSend(servo2_queue,message,0);
+			xQueueSend(servo_msg_queue[1],message,0);
 			break;
 		case 'L':
 		case 'l':
 			snprintf(message,MESSAGE_SIZE, "l");
-			xQueueSend(servo2_queue,message,0);
+			//xQueueSend(servo2_queue,message,0);
+			xQueueSend(servo_msg_queue[1],message,0);
 			break;
 		case 'N':
 		case 'n':
@@ -131,7 +141,8 @@ void process_user_input(char* input)
 		case 'B':
 		case 'b':
 			snprintf(message,MESSAGE_SIZE, "b");
-			xQueueSend(servo2_queue,message,0);
+			//xQueueSend(servo2_queue,message,0);
+			xQueueSend(servo_msg_queue[1],message,0);
 			break;
 		default:
 			break;

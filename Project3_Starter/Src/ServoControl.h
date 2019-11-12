@@ -17,6 +17,8 @@
 #define SERVO_TIME_PER_POSITION 1000
 #define SERVO_BASE_WAIT_TIME 510
 
+
+
 // Represent the 6 positions the servo can be in
 typedef enum{
 	POS0,POS1,POS2,POS3,POS4,POS5

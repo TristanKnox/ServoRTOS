@@ -556,6 +556,16 @@
               <FileType>5</FileType>
               <FilePath>..\Src\UI_Ginerics.h</FilePath>
             </File>
+            <File>
+              <FileName>UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\UART.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

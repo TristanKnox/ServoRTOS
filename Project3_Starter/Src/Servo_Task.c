@@ -1,7 +1,8 @@
 #include "Servo_Task.h"
 
 
-servo_task_t servo_params[3];
+servo_task_t servo_params[NUMBER_OF_SERVOS];
+QueueHandle_t servo_msg_queue[NUMBER_OF_SERVOS];
 
 void led_on(int id);
 void led_off(int id);
@@ -10,12 +11,13 @@ void led_off(int id);
 void servo_task(void *parameters){
 	int counter = 0;
 	servo_task_t *params = (servo_task_t*) parameters;
-	
+	int id = params->id;
+	char message[MESSAGE_SIZE] = {0};
 	while(1){
-		//USART_Printf("%s is running this is the counter %d\r\n",params->name,counter);
-		counter++;
+		if(xQueueReceive(servo_msg_queue[id],message,0)){
+			USART_Printf("Task %s: command recieved: %s\r\n",params->name,message);
+		}
 		if(params->recipe.is_active){
-			//USART_Printf("Holyshit its doing stuff %d",counter);
 			led_on(params->id);
 			command_t command = get_next_command(&params->recipe);
 			if(command.opcode == WAIT)
@@ -31,6 +33,7 @@ void servo_task(void *parameters){
 
 void init_servo_task(int id, char* task_name, channel_t channal, recipe_t recipe){
 	servo_task_t *p = &servo_params[id];
+	servo_msg_queue[id] = xQueueCreate(10,MESSAGE_SIZE);
 	servo_t servo;
 	init_servo(&servo,channal,PWM_count);
 	if(id == 1)

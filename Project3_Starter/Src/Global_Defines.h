@@ -22,6 +22,8 @@
 #define SERVO_2_MIN_DUTY_CALIBRATION 3.0  //Calibrated for box #13-2015 Left Servo
 #define SERVO_2_MAX_DUTY_CALIBRATION 9.5  //Calibrated for box #13-2015 Left Servo
 
+extern QueueHandle_t servo_msg_queue[NUMBER_OF_SERVOS];
+
 
 #endif
 

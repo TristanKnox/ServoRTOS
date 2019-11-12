@@ -157,8 +157,13 @@ int main(void)
 	
 	
 	USART_Printf("PWM done");
-	QueueHandle_t servo1_queue;
-	QueueHandle_t servo2_queue;
+//	QueueHandle_t servo1_queue;
+//	QueueHandle_t servo2_queue;
+//	servo1_queue = xQueueCreate(10,MESSAGE_SIZE);
+//	servo2_queue = xQueueCreate(10,MESSAGE_SIZE);
+//	for(int i = 0; i < NUMBER_OF_SERVOS; i++){
+//		servo_msg_queue[i] = xQueueCreate(10,MESSAGE_SIZE);
+//	}
 	
 	recipe_t recipe_1 = {0};
 	recipe_t recipe_2 ={0};
@@ -176,8 +181,8 @@ int main(void)
 
 	USART_Printf("Starting Task");
 	
-	init_servo_task(1,"Servo_1",CHAN1,recipe_1);
-	init_servo_task(2,"Servo_2",CHAN3,recipe_2);
+	init_servo_task(0,"Servo_0",CHAN1,recipe_1);
+	init_servo_task(1,"Servo_1",CHAN3,recipe_2);
 	
 	char input[MAX_INPUT];	
 	init_ui_task(1,"UI_Task",input,MAX_INPUT);
