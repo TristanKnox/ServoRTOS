@@ -4,12 +4,16 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "usart.h"
+#include "cmsis_os.h"
 
 #define PCS (80)
 #define PWM_count (20000) 
 #define PWM_mode MODE_1
 
 #define NUMBER_OF_SERVOS (2)
+
+#define MAX_INPUT (3)
+#define MESSAGE_SIZE (3)
 
 // These values should be adjusted to calibrate each individual servo
 // Once the min and max are set by using calibrat_servo the other duty cycles for positions in between are calculated as needed
@@ -20,4 +24,8 @@
 
 
 #endif
+
+
+
+
 

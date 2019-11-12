@@ -54,4 +54,9 @@ project3_starter\servo_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal
 project3_starter\servo_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h
 project3_starter\servo_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h
 project3_starter\servo_task.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
+project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+project3_starter\servo_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 project3_starter\servo_task.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
