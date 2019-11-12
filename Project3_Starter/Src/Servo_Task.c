@@ -1,7 +1,7 @@
 #include "Servo_Task.h"
 
 
-servo_task_t servo_params[2];
+servo_task_t servo_params[3];
 
 void led_on(int id);
 void led_off(int id);
@@ -18,7 +18,10 @@ void servo_task(void *parameters){
 			//USART_Printf("Holyshit its doing stuff %d",counter);
 			led_on(params->id);
 			command_t command = get_next_command(&params->recipe);
-			execute_CMD(&params->servo, &command);
+			if(command.opcode == WAIT)
+				vTaskDelay(command.value);
+			else
+				execute_CMD(&params->servo, &command);
 		}
 		else
 			led_off(params->id);

@@ -157,17 +157,19 @@ int main(void)
 	QueueHandle_t servo1_queue;
 	QueueHandle_t servo2_queue;
 	
-	recipe_t recipe_1;
-	recipe_t recipe_2;
+	recipe_t recipe_1 = {0};
+	recipe_t recipe_2 ={0};
 	
 	unsigned char recipe1[] = { LOOP + 2,MOV+ 5,MOV+0, END_LOOP,WAIT+ 5, LOOP + 5,MOV+5, WAIT+2,MOV+3,END_LOOP, RECIPE_END } ;
+	unsigned char wait_recipe[] = {LOOP+5,MOV+5,WAIT+30,MOV+0,END_LOOP,RECIPE_END};
+	unsigned char loop_recipe[] = {LOOP+5,MOV+5,MOV+0,END_LOOP,RECIPE_END};
 	unsigned char recipe2[] = { MOV | 5,WAIT+31,WAIT+31,WAIT+31,MOV+0, RECIPE_END, MOV + 5 } ;
 	unsigned char demo_recipe[] = {MOV+0,MOV+5,MOV+0,MOV+3,MOV+1,MOV+4,END_LOOP,MOV+0,MOV+2,WAIT+0,MOV+3,WAIT+0,MOV+2,MOV+3,WAIT+31,WAIT+31,WAIT+31,MOV+4,RECIPE_END};
 	unsigned char recipe_loop_error[] = { LOOP + 2,MOV+ 5,MOV+0, LOOP+2,MOV+3,END_LOOP, END_LOOP, RECIPE_END } ;
 	unsigned char recipe_error[] = {MOV+0,MOV+5,5,MOV+0,RECIPE_END};
 	
-	init_recipe(&recipe_1,demo_recipe);
-	init_recipe(&recipe_2,demo_recipe);
+	init_recipe(&recipe_1,loop_recipe);
+	init_recipe(&recipe_2,wait_recipe);
 
 	USART_Printf("Starting Task");
 	
