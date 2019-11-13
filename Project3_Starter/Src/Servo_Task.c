@@ -1,7 +1,7 @@
 #include "Servo_Task.h"
 
 
-servo_task_t servo_params[NUMBER_OF_SERVOS];
+servo_task_t servo_params[3];//NUMBER_OF_SERVOS];
 QueueHandle_t servo_msg_queue[NUMBER_OF_SERVOS];
 
 void led_on(int id);
@@ -36,10 +36,12 @@ void init_servo_task(int id, char* task_name, channel_t channal, recipe_t recipe
 	servo_msg_queue[id] = xQueueCreate(10,MESSAGE_SIZE);
 	servo_t servo;
 	init_servo(&servo,channal,PWM_count);
-	if(id == 1)
+	if(id == 0)
 		calibrate_servo(&servo,SERVO_1_MAX_DUTY_CALIBRATION,SERVO_1_MIN_DUTY_CALIBRATION);
-	if(id == 2)
+	else if(id == 1)
 		calibrate_servo(&servo,SERVO_2_MAX_DUTY_CALIBRATION,SERVO_2_MIN_DUTY_CALIBRATION);
+	else 
+		calibrate_servo(&servo,DEFAULT_MAX_DUTY,DEFAULT_MIN_DUTY);
 	set_servo_position(&servo,0);
 	p->id = id;
 	strncpy(p->name,task_name,configMAX_TASK_NAME_LEN);
@@ -49,15 +51,15 @@ void init_servo_task(int id, char* task_name, channel_t channal, recipe_t recipe
 }
 
 void led_on(int id){
-	if(id == 1)
+	if(id == 0)
 		Green_LED_On();
-	if(id == 2)
+	if(id == 1)
 		Red_LED_On();
 }
 
 void led_off(int id){
-	if(id == 1)
+	if(id == 0)
 		Green_LED_Off();
-	if(id == 2)
+	if(id == 1)
 		Red_LED_Off();
 }
