@@ -26,6 +26,8 @@
 
 extern QueueHandle_t servo_msg_queue[NUMBER_OF_SERVOS];
 
+extern QueueHandle_t servo_msg_queue[NUMBER_OF_SERVOS];
+
 
 #endif
 

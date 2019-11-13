@@ -98,10 +98,13 @@ void process_user_input(char* input)
 			break;
 		case 'N':
 		case 'n':
+			snprintf(message,MESSAGE_SIZE, "n");
+			//xQueueSend(servo2_queue,message,0);
+			xQueueSend(servo_msg_queue[0],message,0);
 			break;
 		case 'B':
 		case 'b':
-			snprintf(message,MESSAGE_SIZE, "p");
+			snprintf(message,MESSAGE_SIZE, "b");
 			//xQueueSend(servo1_queue,message,0);
 			xQueueSend(servo_msg_queue[0],message,0);
 			break;
@@ -137,6 +140,9 @@ void process_user_input(char* input)
 			break;
 		case 'N':
 		case 'n':
+			snprintf(message,MESSAGE_SIZE, "n");
+			//xQueueSend(servo2_queue,message,0);
+			xQueueSend(servo_msg_queue[1],message,0);
 			break;
 		case 'B':
 		case 'b':

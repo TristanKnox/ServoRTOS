@@ -18,7 +18,7 @@ typedef struct{
 
 void servo_task(void *parameters);
 void init_servo_task(int id, char* task_name, channel_t channel, recipe_t recipe);
-
+void process_message(char* message, servo_task_t* const params);
 
 
 #endif

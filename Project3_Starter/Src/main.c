@@ -176,8 +176,8 @@ int main(void)
 	unsigned char recipe_loop_error[] = { LOOP + 2,MOV+ 5,MOV+0, LOOP+2,MOV+3,END_LOOP, END_LOOP, RECIPE_END } ;
 	unsigned char recipe_error[] = {MOV+0,MOV+5,5,MOV+0,RECIPE_END};
 	
-	init_recipe(&recipe_1,loop_recipe);
-	init_recipe(&recipe_2,wait_recipe);
+	init_recipe(&recipe_1,demo_recipe);
+	init_recipe(&recipe_2,demo_recipe);
 
 	USART_Printf("Starting Task");
 	
